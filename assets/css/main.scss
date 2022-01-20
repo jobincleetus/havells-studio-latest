@@ -1,0 +1,161 @@
+$white-base: #fff;
+$black-base: #000;
+$brown-base: #C2996A;
+$brown-light: #EBE5D5;
+$brown-dark: #332B29;
+
+.black-text {
+    color: $brown-dark;
+}
+button {
+    border: 0;
+}
+
+.navbar-btn {
+    width: 30px;
+    height: 30px;
+    background: $white-base;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-line {
+    position: relative;
+    width: 3px;
+    display: block;
+    height: 3px;
+    background: #332B29;
+    border-radius: 50%;
+    transition: 0.5s ease transform;
+}
+
+.navbar-line:before, .navbar-line:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: $brown-dark;
+    border-radius: 50%;
+    left: 0;
+}
+
+.navbar-line:before {
+    top: -7px;
+}
+
+.navbar-line:after {
+    bottom: -7px;
+}
+.navbar-container {
+    position: fixed;
+    width: 100%;
+    transition: 0.5s ease all;
+}
+.canvas-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    padding-bottom: 80px;
+    background-color: $brown-base;
+    opacity: 0;
+    transition: 1s ease all;
+}
+.navbar-container .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.navbar-logo {
+    height: 23px;
+    filter: brightness(20);
+}
+.active .navbar-line {
+    transform: rotate(90deg);
+}
+.nav-link {
+    color: $white-base;
+    font-size: 35px;
+    line-height: 1.3;
+}
+.nav-link:not(:last-child) {
+    margin-bottom: 20px;
+}
+.canvas-logo {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    display: block;
+    filter: brightness(20);
+}
+.canvas-open {
+    display: flex;
+    opacity: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+body {
+    font-size: 16px;
+}
+.head-level-1 {
+    font-size: 80px;
+}
+.head-level-2 {
+    font-size: 60px;
+}
+
+.btn {
+    background: #fff;
+    padding: 10px 30px;
+    font-weight: 500;
+    border-radius: 30px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.play-btn {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.play-btn:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-image: url('~/assets/imgs/Play.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navbar-container.sticky {
+    background-color: $white-base;
+
+    .navbar-logo {
+        filter: brightness(1);
+    }
+    .navbar-btn {
+        background: $brown-dark;
+    }
+    .navbar-line, .navbar-line:before, .navbar-line:after {
+        background: $white-base;
+    }
+}
+.head-level-3 {
+    font-size: 36px;
+    line-height: 1.3;
+}
+.sub-gold {
+    color: $brown-base;
+    font-size: 20px;
+}
