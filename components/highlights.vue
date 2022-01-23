@@ -3,50 +3,69 @@
         <div class="container">
             <div class="row text-left">
                 <div class="col-sm-4">
-                    <h4 class="sub-gold">GLOBAL</h4>
-                     <h3 class="head-level-3">Benchmarked consumer durables</h3>
-                     <p>Where superior design meets premium functionality.</p>
+                    <h4 class="sub-gold reveal-text">GLOBAL</h4>
+                     <h3 class="head-level-4 reveal-text">Benchmarked consumer durables</h3>
+                     <p class="reveal-text">Where superior design meets premium functionality.</p>
                 </div>
                 <div class="col-sm-4">
-                    <h4 class="sub-gold">ESTABLISHED</h4>
-                     <h3 class="head-level-3">Time-tested quality</h3>
-                     <p>Staying true to Havells’ traditions to deliver top-notch quality.</p>
+                    <h4 class="sub-gold reveal-text">ESTABLISHED</h4>
+                     <h3 class="head-level-4 reveal-text">Time-tested quality</h3>
+                     <p class="reveal-text">Staying true to Havells’ traditions to deliver top-notch quality.</p>
                 </div>
                 <div class="col-sm-4">
-                    <h4 class="sub-gold">INNOVATIVE</h4>
-                     <h3 class="head-level-3">Driven by <br>high-end technology</h3>
-                     <p>Modern features curated for the consumer of today.</p>
+                    <h4 class="sub-gold reveal-text">INNOVATIVE</h4>
+                     <h3 class="head-level-4 reveal-text">Driven by <br>high-end technology</h3>
+                     <p class="reveal-text">Modern features curated for the consumer of today.</p>
                 </div>
             </div>
         </div>
+        <div class="bg-img-holder"></div>
     </section>
 </template>
 
 <style lang="scss" scoped>
     #home-highlights {
-        background-image: url('~/assets/imgs/highlight_bg.jpg');
-        background-size: cover;
+        .bg-img-holder {
+            background-image: url('~/assets/imgs/highlight_bg.jpg');
+        }
         color: #fff;
     }
     #home-highlights h3 {
         max-width: 80%;
     }
     #home-highlights p {
-        max-width: 50%;
+        max-width: 60%;
     }
     #home-highlights  {
-        justify-content: flex-end;
+        // justify-content: flex-end;
         .col-sm-4:nth-child(2) {
-            padding-top: 10%;
+            padding-top: 8%;
         }
         .col-sm-4:nth-child(3) {
-            padding-top: 20%;
+            padding-top: 16%;
         }
     }
 </style>
 
 <script>
 export default {
-  name: 'highlights'
+  name: 'highlights',
+  mounted() {
+
+      var homeHighlights = gsap.timeline({
+          scrollTrigger:{
+			trigger: "#home-highlights",
+			start: "50% 50%",
+			scrub: 0.2,
+            markers: true,
+            pin: true
+		}
+      });
+      homeHighlights.from("#home-highlights .col-sm-4:nth-child(2)", {y:1000, duration: 2}, "first-scroll");
+      homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.1, duration: 2}, "first-scroll");
+      homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:1200, duration: 2}, "second-scroll");
+      homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.3, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll");
+
+  }
 }
 </script>
