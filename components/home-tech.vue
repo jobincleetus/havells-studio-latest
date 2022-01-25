@@ -28,7 +28,11 @@ export default {
   name: 'home-tech',
   mounted() {
 
-      var dispHeight = (window.innerHeight)/2;
+      if(window.innerWidth < 768 ){
+        var dispHeight = (window.innerHeight)/4;
+      } else {
+        var dispHeight = (window.innerHeight)/2;
+      }
 
       var homeTech = gsap.timeline({
           scrollTrigger:{
@@ -36,7 +40,7 @@ export default {
 			start: "0% 80%",
 			end: "30% 50%",
 			scrub: 0.2,
-            markers: true
+            // markers: true
 		}
       });
       homeTech.from("#home-tech .bg-img-holder", {y: dispHeight, duration: 2});

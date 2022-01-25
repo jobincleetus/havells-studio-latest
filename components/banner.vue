@@ -3,7 +3,7 @@
         <div class="container">
             <h4 class="text-uppercase ls-4 reveal-text reveal-center">Introducing</h4>
             <h1 class="head-level-2 reveal-text reveal-center">Modern products backed by <br>futuristic & innovative <br>technology.</h1>
-            <a href="#" class="btn play-btn mt-4">PLAY VIDEO</a>
+            <a href="#" class="btn play-btn mt-4" data-toggle="modal" data-target="#videoModal">PLAY VIDEO</a>
         </div>
         <div class="bg-img-holder"></div>
         <video class="bg-vid-holder" autoplay="autoplay" loop muted>
@@ -11,6 +11,7 @@
             Your browser does not support the video tag.
         </video>
         <div class="bg-vid-overlay"></div>
+
     </section>
 </template>
 

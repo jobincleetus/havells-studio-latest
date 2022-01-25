@@ -78,11 +78,15 @@ export default {
 			trigger: "#product-showcase",
 			start: "50% 50%",
 			scrub: 0.2,
-            markers: true,
+            // markers: true,
             pin: true
 		}
       });
-      productShowcase.to("#product-showcase .bg-img-holder-2", {scale:1.2, duration: 2, transformOrigin: "33% 80%"}, "first-scroll");
+      if(window.innerWidth < 768) {
+        productShowcase.to("#product-showcase .bg-img-holder-2", {scale:1.2, duration: 2, transformOrigin: "50% 100%"}, "first-scroll");
+      } else {
+        productShowcase.to("#product-showcase .bg-img-holder-2", {scale:1.2, duration: 2, transformOrigin: "33% 80%"}, "first-scroll");
+      }
       
   }
 }

@@ -10,13 +10,13 @@
             <div class="canvas-container">
             <div class="canvas-container-inner">
                     <nav>
-                        <NuxtLink to="/products" class="nav-link">PRODUCTS</NuxtLink>
-                        <NuxtLink to="/about" class="nav-link">ABOUT US</NuxtLink>
-                        <NuxtLink to="/contact" class="nav-link">CONTACT US</NuxtLink>
-                        <NuxtLink to="/privacy-policy" class="nav-link">PRIVACY POLICY</NuxtLink>
+                        <NuxtLink to="/" class="nav-link">PRODUCTS</NuxtLink>
+                        <NuxtLink to="/" class="nav-link">ABOUT US</NuxtLink>
+                        <NuxtLink to="/" class="nav-link">CONTACT US</NuxtLink>
+                        <NuxtLink to="/" class="nav-link">PRIVACY POLICY</NuxtLink>
                     </nav>
 
-                    <img src="~/assets/imgs/havells-logo.svg" alt="Havells Studio" class="canvas-logo" />
+                    <NuxtLink to="/" class="canvas-logo"><img src="~/assets/imgs/havells-logo.svg" alt="Havells Studio" /></NuxtLink>
 
                 </div>
             </div>
@@ -52,10 +52,7 @@ export default {
 
 
     let navLink = gsap.timeline({
-        paused: true,
-        onComplete: function(){ 
-            addActive();
-        }
+        paused: true
     });
     navLink.from(".nav-link, .canvas-logo", 0.5, {
         yPercent: 100,

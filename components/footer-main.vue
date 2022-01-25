@@ -8,32 +8,32 @@
                         Havells Studio is a Premium Brand with a unique offering of aesthetically beautiful, modern products backed by futuristic and innovative technology.
                     </p>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 menu-col">
                     <h5 class="menu-title text-uppercase">
                         PRODUCTS
                     </h5>
                     <ul class="footer-menu">
-                        <li>MEDITATE</li>
-                        <li>HALO</li>
-                        <li>ESSENCE</li>
+                        <li><NuxtLink to="/">MEDITATE</NuxtLink></li>
+                        <li><NuxtLink to="/">HALO</NuxtLink></li>
+                        <li><NuxtLink to="/">ESSENCE</NuxtLink></li>
                     </ul>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 menu-col">
                     <h5 class="menu-title text-uppercase">
                         COMPANY
                     </h5>
                     <ul class="footer-menu">
-                        <li>ABOUT US</li>
-                        <li>CONTACT US</li>
+                        <li><NuxtLink to="/">ABOUT US</NuxtLink></li>
+                        <li><NuxtLink to="/">CONTACT US</NuxtLink></li>
                     </ul>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 menu-col">
                     <h5 class="menu-title text-uppercase">
                         LEGAL
                     </h5>
                     <ul class="footer-menu">
-                        <li>TERMS OF USE</li>
-                        <li>PRIVACY POLICY</li>
+                        <li><NuxtLink to="/">TERMS OF USE</NuxtLink></li>
+                        <li><NuxtLink to="/">PRIVACY POLICY</NuxtLink></li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +67,16 @@
 
 <script>
 export default{
-    name: 'footer-main'
+    name: 'footer-main',
+    mounted() {
+        if(window.innerWidth < 768) {
+            $('.menu-title').click(function(){
+                console.log('test');
+                $(this).toggleClass('active-menu');
+                $(this).parents('.menu-col').toggleClass('expanded-menu');
+            })
+        }
+    }
 }
 </script>
 
@@ -87,11 +96,17 @@ export default{
         }
         .menu-title {
             margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 16px;
         }
 
         .footer-menu li {
             margin: 10px auto;
             font-size: 14px;
+            a {
+                color: #332B29;
+            }
         }
         .social-icons {
             display: grid;
