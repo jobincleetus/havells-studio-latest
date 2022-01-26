@@ -66,11 +66,12 @@ export default {
     },
     mounted() {
 
-        var navbarAnim = gsap.timeline();
+        function init() {
+            
+            var navbarAnim = gsap.timeline();
 
-        navbarAnim.from(".navbar-container", 0.5, {autoAlpha:0}, "+=1");
+            navbarAnim.from(".navbar-container", 0.5, {autoAlpha:0}, "+=1");
 
-        window.addEventListener("load", function () {
             let splitWords = function (selector) {
                 var elements = document.querySelectorAll(selector);
 
@@ -136,31 +137,60 @@ export default {
             let revealText = document.querySelectorAll(".reveal-text");
 
             gsap.registerPlugin(ScrollTrigger);
-            let revealLines = revealText.forEach((element) => {
-                const lines = element.querySelectorAll(".words");
+            // ScrollTrigger.enable();
 
-                function addActive() {
-                $(element).parents("section").addClass("active");
-                }
-                        
-                let tl = gsap.timeline({
-                onComplete: function(){ 
-                    addActive();
-                },
-                scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "restart none none reset"
-                }
+                let revealLines = revealText.forEach((element, i) => {
+                    const lines = element.querySelectorAll(".words");
+
+                    function addActive() {
+                    $(element).parents("section").addClass("active");
+                    }
+                            
+                    let tl = gsap.timeline({
+                    onComplete: function(){ 
+                        addActive();
+                    },
+                    scrollTrigger: {
+                        id: "indexPannels" + i,
+                        trigger: element,
+                        toggleActions: "restart none none reset"
+                    }
+                    });
+                    tl.set(element, { autoAlpha: 1 });
+                    tl.from(lines, 1, {
+                    yPercent: 100,
+                    ease: Power3.out,
+                    stagger: 0.25,
+                    delay: 0.2
+                    });
+
                 });
-                tl.set(element, { autoAlpha: 1 });
-                tl.from(lines, 1, {
-                yPercent: 100,
-                ease: Power3.out,
-                stagger: 0.25,
-                delay: 0.2
-                });
-            });
-            });
+                    console.log("init started")
+        }
+
+        init();
+
+        let lastUrl = location.href; 
+            new MutationObserver(() => {
+            const url = location.href;
+            if (url !== lastUrl) {
+                lastUrl = url;
+                onUrlChange();
+            }
+        }).observe(document, {subtree: true, childList: true});
+            
+            
+        function onUrlChange() {
+            console.log('URL changed!', location.href);
+            const myTimeout = setTimeout(init, 100);
+        }
+        
+    },
+    watch: {
+        "$route": function(){
+            console.log('$route')
+            ScrollTrigger.getAll().forEach(ST => ST.kill());
+        }
     }
 }
 </script>

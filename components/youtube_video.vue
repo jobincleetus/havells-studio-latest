@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><span>x</span></button>
-                    <iframe width="100%" src="" data-src="https://www.youtube.com/embed/IP7uGKgJL8U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="100%" src="" frameborder="0" allowscriptaccess="always" allow="autoplay" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -60,7 +60,9 @@ export default {
     name: 'youtube-video',
     mounted() {
         var $videoSrc;  
-        $videoSrc = $('.modal-body iframe').data( "src" );
+        $('.video-btn').click(function() {
+            $videoSrc = $(this).data( "src" );
+        });
         console.log($videoSrc);
 
         $('#videoModal').on('shown.bs.modal', function (e) {

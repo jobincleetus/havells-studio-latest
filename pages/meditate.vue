@@ -37,6 +37,11 @@
 
 <script>
 export default {
+    head () {
+        return {
+            title: 'Product - Meditate'
+        }
+    },
     mounted() {
 
         var dispHeight = window.innerHeight;

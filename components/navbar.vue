@@ -10,7 +10,7 @@
             <div class="canvas-container">
             <div class="canvas-container-inner">
                     <nav>
-                        <NuxtLink to="/" class="nav-link">PRODUCTS</NuxtLink>
+                        <NuxtLink to="/meditate" class="nav-link">PRODUCTS</NuxtLink>
                         <NuxtLink to="/" class="nav-link">ABOUT US</NuxtLink>
                         <NuxtLink to="/" class="nav-link">CONTACT US</NuxtLink>
                         <NuxtLink to="/" class="nav-link">PRIVACY POLICY</NuxtLink>
@@ -45,7 +45,7 @@ export default {
       $('.canvas-container').toggleClass("canvas-open");
     });
 
-    $(".nav-link").click(function(){
+    $(".nav-link, .canvas-logo").click(function(){
       $('.navbar-btn').removeClass("active");
       $('.canvas-container').removeClass("canvas-open");
     });

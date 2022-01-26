@@ -19,6 +19,7 @@
                 </div>
             </div>
         </div>
+        <div class="dummy-holder"></div>
         <div class="bg-img-holder"></div>
     </section>
 </template>
@@ -45,6 +46,15 @@
             padding-top: 16%;
         }
     }
+    .dummy-holder {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
 </style>
 
 <script>
@@ -57,7 +67,6 @@ export default {
 			trigger: "#home-highlights",
 			start: "50% 50%",
 			scrub: 0.2,
-            // markers: true,
             pin: true
 		}
       });
@@ -67,12 +76,12 @@ export default {
         homeHighlights.to("#home-highlights .bg-img-holder", {scale:1, x: -250, duration: 2}, "first-scroll");
         homeHighlights.to("#home-highlights .col-sm-4:nth-child(1)", {autoAlpha:0, duration: 0.5}, "first-scroll+=1.5");
         homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:1200, duration: 2}, "second-scroll");
-        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1, x: -500, duration: 2, transformOrigin: "45% 60%"}, "second-scroll");
+        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1, x: -500, duration: 2}, "second-scroll");
         homeHighlights.to("#home-highlights .col-sm-4:nth-child(2)", {autoAlpha:0, duration: 0.5}, "second-scroll+=1.5");
       } else {
-        homeHighlights.from("#home-highlights .col-sm-4:nth-child(2)", {y:1000, duration: 2}, "first-scroll");
-        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.1, duration: 2}, "first-scroll");
-        homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:1200, duration: 2}, "second-scroll");
+        homeHighlights.from("#home-highlights .col-sm-4:nth-child(2)", {y:"+=1000", duration: 2}, "first-scroll");
+        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.1, duration: 2, transformOrigin: "45% 60%"}, "first-scroll");
+        homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:"+=1000", duration: 2}, "second-scroll");
         homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.3, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll");
       }
 
