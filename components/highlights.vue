@@ -18,8 +18,8 @@
                      <p class="reveal-text">Modern features curated for the consumer of today.</p>
                 </div>
             </div>
-        </div>
         <div class="dummy-holder"></div>
+        </div>
         <div class="bg-img-holder"></div>
     </section>
 </template>
@@ -47,13 +47,12 @@
         }
     }
     .dummy-holder {
-        position: absolute;
+        position: relative;
+        display: block;
         width: 100px;
         height: 100px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
+        visibility: hidden;
+        margin-bottom: -100px;
     }
 </style>
 
@@ -81,8 +80,9 @@ export default {
       } else {
         homeHighlights.from("#home-highlights .col-sm-4:nth-child(2)", {y:"+=1000", duration: 2}, "first-scroll");
         homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.1, duration: 2, transformOrigin: "45% 60%"}, "first-scroll");
-        homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:"+=1000", duration: 2}, "second-scroll");
+        homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:"+=1200", duration: 2}, "second-scroll");
         homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.3, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll");
+        homeHighlights.from("#home-highlights .dummy-holder", {y: 6000, duration: 2}, "third-scroll");
       }
 
   }
