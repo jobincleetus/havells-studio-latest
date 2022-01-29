@@ -57,12 +57,25 @@ export default {
     },
     mounted() {
 
+        function productAnimInit() {
+
+        if (window.innerWidth > 768) {
+            var firstTwoSec = $('#product_banner').innerHeight() + $('#product_highlight_1').innerHeight() + ($('#highlight_1').innerHeight())/2 - ($('.product-mover-alt').innerHeight())/2;
+        } else {
+            var firstTwoSec = $('#product_banner').innerHeight() + $('#product_highlight_1').innerHeight() + ($('#highlight_1').innerHeight())/2.5 - ($('.product-mover-alt').innerHeight())/2;
+        }
+
+        var lastScrollTop = 0;
         $(window).scroll(function() {
-            if($(window).scrollTop() == $(window).height() - $(window).height() ) {
-                console.log("top!");
-                setTimeout(function(){ $('.product-mover-alt').css({"opacity": "0", "visibility": "hidden"}) }, 100);
-                
+            var st = $(this).scrollTop();
+            if (st < lastScrollTop) {
+                if($(window).scrollTop() == $(window).height() - $(window).height() || $(window).scrollTop() < firstTwoSec ) {
+                    // console.log("top!");
+                    setTimeout(function(){ $('.product-mover-alt').css({"opacity": "0", "visibility": "hidden", "transition": "0"}) });
+                    
+                }
             }
+            lastScrollTop = st;
         });
 
         var dispHeight = window.innerHeight;
@@ -96,7 +109,6 @@ export default {
         productBanner.from("#product_banner .bg-img-holder", {scale:1.4, duration: 3, transformOrigin: "50% 0%"}, "first-scroll");
         // productBanner.fromTo(".product-mover", {y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, {scale:0.9, y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, "first-scroll-=1");
         productBanner.fromTo(".product-mover", {css: {top: adjdispHeight}, duration: 2}, {css: {top: adjdispHeight/1.8, scale: "0.9"}, duration: 2}, "first-scroll");
-        productBanner.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
 
         if(window.innerHeight > 900) {
             var heightlightHeight = window.innerHeight + $('#product_highlight_1').innerHeight() - $('#product_highlight_1').innerHeight()/1.4;
@@ -119,7 +131,6 @@ export default {
         } else {
             productHighlightOne.to(".product-mover",{css: {top: heightlightHeight-40, xPercent:"30", scale: "0.4", transformOrigin: "50% 100%", duration: 4}});
         }
-        productHighlightOne.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
 
         function productFixedFix() {
             console.log("ended")
@@ -138,9 +149,11 @@ export default {
                 // markers: true
             }
         });
-
         
         productHighlightTwoScrubFix.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
+        if(window.innerWidth > 768) {
+            productHighlightTwoScrubFix.from(".product-mover-alt",{xPercent:"80", yPercent:"-40", scale: "0.3", transformOrigin: "50% 100%", duration: 0.00001});
+        }
 
         var productHighlightTwoScrubFix = gsap.timeline({
             scrollTrigger:{
@@ -314,6 +327,13 @@ export default {
         });
 
         closingCtaProduct.from("#product_cta .bg-img-holder",{scale: 1.3, duration: 2});
+        }
+
+        // productAnimInit();
+
+        if (window.location.href.indexOf("meditate") > -1) {
+            const myTimeout = setTimeout(productAnimInit, 300);
+        }
     }
 }
 </script>

@@ -18,7 +18,6 @@
                      <p class="reveal-text">Modern features curated for the consumer of today.</p>
                 </div>
             </div>
-        <div class="dummy-holder"></div>
         </div>
         <div class="bg-img-holder"></div>
     </section>
@@ -46,14 +45,6 @@
             padding-top: 16%;
         }
     }
-    .dummy-holder {
-        position: relative;
-        display: block;
-        width: 100px;
-        height: 100px;
-        visibility: hidden;
-        margin-bottom: -100px;
-    }
 </style>
 
 <script>
@@ -66,7 +57,8 @@ export default {
 			trigger: "#home-highlights",
 			start: "50% 50%",
 			scrub: 0.2,
-            pin: true
+            pin: true,
+            end: "+=2000"
 		}
       });
 
@@ -79,10 +71,9 @@ export default {
         homeHighlights.to("#home-highlights .col-sm-4:nth-child(2)", {autoAlpha:0, duration: 0.5}, "second-scroll+=0.5");
       } else {
         homeHighlights.from("#home-highlights .col-sm-4:nth-child(2)", {y:700, duration: 2}, "first-scroll");
-        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.1, duration: 2, transformOrigin: "45% 60%"}, "first-scroll");
+        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.02, duration: 2, transformOrigin: "45% 60%"}, "first-scroll");
         homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:1200, duration: 2}, "second-scroll");
-        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.3, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll+=3");
-        homeHighlights.from("#home-highlights .dummy-holder", {y: 6000, duration: 6}, "second-scroll+=6");
+        homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.2, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll+=1");
       }
 
   }
