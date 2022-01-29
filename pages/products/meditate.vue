@@ -57,12 +57,30 @@ export default {
     },
     mounted() {
 
+        $(window).scroll(function() {
+            if($(window).scrollTop() == $(window).height() - $(window).height() ) {
+                console.log("top!");
+                setTimeout(function(){ $('.product-mover-alt').css({"opacity": "0", "visibility": "hidden"}) }, 100);
+                
+            }
+        });
+
         var dispHeight = window.innerHeight;
         if(window.innerWidth > 1600) {
             var adjdispHeight = dispHeight/2.1;
         } else {
             var adjdispHeight = dispHeight/2;
         }
+
+        var scrollInitialFix = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#product_banner",
+            start: "0% 1%",
+            toggleActions: "restart restart restart restart",
+            // markers: true,
+        }
+        });
+        scrollInitialFix.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
 
         var productBanner = gsap.timeline({
             scrollTrigger:{
@@ -78,6 +96,7 @@ export default {
         productBanner.from("#product_banner .bg-img-holder", {scale:1.4, duration: 3, transformOrigin: "50% 0%"}, "first-scroll");
         // productBanner.fromTo(".product-mover", {y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, {scale:0.9, y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, "first-scroll-=1");
         productBanner.fromTo(".product-mover", {css: {top: adjdispHeight}, duration: 2}, {css: {top: adjdispHeight/1.8, scale: "0.9"}, duration: 2}, "first-scroll");
+        productBanner.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
 
         if(window.innerHeight > 900) {
             var heightlightHeight = window.innerHeight + $('#product_highlight_1').innerHeight() - $('#product_highlight_1').innerHeight()/1.4;
@@ -100,7 +119,7 @@ export default {
         } else {
             productHighlightOne.to(".product-mover",{css: {top: heightlightHeight-40, xPercent:"30", scale: "0.4", transformOrigin: "50% 100%", duration: 4}});
         }
-        productHighlightOne.to(".product-mover-alt",{autoAlpha: 0, duration: 0});
+        productHighlightOne.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
 
         function productFixedFix() {
             console.log("ended")
@@ -109,6 +128,45 @@ export default {
         var heightlightHeight = (window.innerHeight + $('#highlight_1').innerHeight() + $('#highlight_1').innerHeight())/1.4 + window.innerHeight*0.1;
 
         var fixedHeightFix = (window.innerHeight/2 - $('.product-mover').innerHeight()/2)/2;
+
+        var productHighlightTwoScrubFix = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#highlight_1",
+                start: "15% 50%",
+                toggleActions: "restart reverse restart reverse",
+                // scrub: 0.5,
+                // markers: true
+            }
+        });
+
+        
+        productHighlightTwoScrubFix.to(".product-mover-alt",{autoAlpha: 0, duration: 0.00001});
+
+        var productHighlightTwoScrubFix = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#highlight_1",
+                start: "50% 50%",
+                toggleActions: "restart reverse restart reverse",
+                // scrub: 0.5,
+                // markers: true
+            }
+        });
+
+        
+        productHighlightTwoScrubFix.to(".product-mover-alt",{autoAlpha: 1, duration: 0.00001});
+
+        var productHighlightTwoScrubFixTwo = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#highlight_1",
+                start: "50% 50%",
+                toggleActions: "restart reverse restart reverse",
+                // scrub: 0.5,
+                // markers: true
+            }
+        });
+
+        
+        productHighlightTwoScrubFixTwo.to(".product-mover",{autoAlpha: 0, duration: 0.00001});
 
         var productHighlightTwo = gsap.timeline({
             scrollTrigger:{
@@ -125,12 +183,10 @@ export default {
         } else {
             productHighlightTwo.to(".product-mover",{css: {top: heightlightHeight, width: "50%", xPercent:"100", scale: "0.8", duration: 4}}, "first-center");
         }
-        productHighlightTwo.to(".product-mover",{autoAlpha: 0, duration: 0});
-        productHighlightTwo.fromTo(".product-mover-alt",{autoAlpha: 0, duration: 0.001},{autoAlpha: 1, duration: 0.001});
 
 
         if(window.innerWidth > 768) {
-            var highlightTwoStart = "30% 50%";
+            var highlightTwoStart = "15% 50%";
         } else {
             var highlightTwoStart = "-10% 50%";
         }
@@ -138,7 +194,7 @@ export default {
             scrollTrigger:{
                 trigger: "#highlight_2",
                 start: highlightTwoStart,
-                end: "50% 50%",
+                end: "30% 50%",
                 scrub: 0.5,
                 // markers: true
             }
@@ -154,8 +210,8 @@ export default {
 
 
         if(window.innerWidth > 768) {
-            var highlightFourStart = "45% 50%";
-            var highlightFourEnd = "70% 50%";
+            var highlightFourStart = "-10% 50%";
+            var highlightFourEnd = "30% 50%";
         } else {
             var highlightFourStart = "-10% 50%";
             var highlightFourEnd = "30% 50%";
@@ -170,6 +226,7 @@ export default {
             }
         });
 
+        productHighlightFour.to(".product-mover-open",{autoAlpha: 1});
         productHighlightFour.from("#product_highlights_1 .bg-img-holder",{clipPath: "inset(0% 100% 0% 0%)", duration: 1}, "product-open-change");
         if(window.innerWidth < 768) {
             productHighlightFour.to(".product-mover-open",{xPercent: "-50", duration: 1}, "product-open-change");
@@ -179,8 +236,8 @@ export default {
         var productHighlightFourAlt = gsap.timeline({
             scrollTrigger:{
                 trigger: "#highlight_3",
-                start: "75% 50%",
-                end: "95% 50%",
+                start: "65% 50%",
+                end: "80% 50%",
                 scrub: 0.5,
                 // markers: true
             }
@@ -206,7 +263,7 @@ export default {
         
         if(window.innerWidth > 768) {
             var highlightFiveStart = "-50% 50%";
-            var highlightFiveEnd = "80% 50%";
+            var highlightFiveEnd = "60% 50%";
         } else {
             var highlightFiveStart = "-100% 100%";
             var highlightFiveEnd = "-90% 30%";

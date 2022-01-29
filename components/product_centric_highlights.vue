@@ -53,8 +53,13 @@
         #highlight_3 {
             align-items: flex-end;
         }
-        #highlight_2 {
+        #highlight_2, #highlight_3 {
             min-height: 50vh;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        #product_highlights_1 #highlight_3 {
+            min-height: 100vh;
         }
     }
 </style>

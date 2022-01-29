@@ -1,5 +1,6 @@
 <template>
-    <section id="category_about" class="grid-section has-reveal-anim text-center">
+    <section id="category_about" class="has-reveal-anim text-center">
+        <div class="comp-container grid-section">
         <div class="container">
             <h2 class="head-level-3 reveal-text reveal-center">
                 Havells Studio is a Premium Brand with a unique offering of aesthetically beautiful, modern products backed by futuristic and innovative technology.
@@ -8,6 +9,7 @@
         <div class="bg-img-holder"></div>
         <img class="logo-img-holder logo-holder-1" src="~/assets/imgs/havells-logo.svg" />
         <img class="logo-img-holder logo-holder-2" src="~/assets/imgs/havells-logo.svg" />
+        </div>
     </section>
 </template>
 
@@ -15,6 +17,12 @@
     #category_about {
         overflow: hidden;
         position: relative;
+        min-height: auto;
+        padding: 0;
+        .comp-container {
+            min-height: 100vh;
+
+        }
         z-index: -1;
         .bg-img-holder {
             background-image: url('~/assets/imgs/category-img/about_category.jpg')

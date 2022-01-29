@@ -44,7 +44,7 @@ export default {
         }
         });
 
-        havellsLogoCatDown.to("#category_about", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+        havellsLogoCatDown.to(".comp-container", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
 
         
         var bgColorOne = $('#category_meditate').data( "color" );
@@ -56,7 +56,7 @@ export default {
         var bgChangeOne = gsap.timeline({
             scrollTrigger:{
             trigger: "#category_halo",
-            start: "30% 50%",
+            start: "45% 60%",
             toggleActions: "restart none none reverse",
             // markers: true
         }
@@ -67,7 +67,7 @@ export default {
         var bgChangeTwo = gsap.timeline({
             scrollTrigger:{
             trigger: "#category_essence",
-            start: "30% 50%",
+            start: "45% 60%",
             toggleActions: "restart none none reverse",
             // markers: true
         }
