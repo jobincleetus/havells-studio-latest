@@ -10,10 +10,10 @@
             <div class="canvas-container">
             <div class="canvas-container-inner">
                     <nav>
-                        <NuxtLink to="/products/meditate" class="nav-link">PRODUCTS</NuxtLink>
-                        <NuxtLink to="/" class="nav-link">ABOUT US</NuxtLink>
-                        <NuxtLink to="/" class="nav-link">CONTACT US</NuxtLink>
-                        <NuxtLink to="/" class="nav-link">PRIVACY POLICY</NuxtLink>
+                        <NuxtLink to="/products" class="nav-link">PRODUCTS</NuxtLink>
+                        <NuxtLink to="/about" class="nav-link">ABOUT US</NuxtLink>
+                        <NuxtLink to="/contact" class="nav-link">CONTACT US</NuxtLink>
+                        <NuxtLink to="/privacy-policy" class="nav-link">PRIVACY POLICY</NuxtLink>
                     </nav>
 
                     <NuxtLink to="/" class="canvas-logo"><img src="~/assets/imgs/havells-logo.svg" alt="Havells Studio" /></NuxtLink>

@@ -1,18 +1,80 @@
 <template>
-    <div class="page-container dark-header">
-       Product Category Page
+    <div class="page-container">
+        <category-banner />
+        <category-about />
+        <category-products />
     </div>
 </template>
 
-<style lang="scss" scoped>
- .page-container {
-     min-height: 80vh;
-     display: grid;
-     place-items: center;
- }
-</style>
+<script>
 export default {
     mounted() {
+        var categoryBanner = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#category_banner",
+            start: "0% 0%",
+            end: "90% 40%",
+            scrub: 1,
+            // markers: true
+        }
+        });
+
+        categoryBanner.to("#category_banner .container-first-half", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+        categoryBanner.from("#category_banner .container-second-half", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+
+        var havellsLogoCat = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#category_about",
+            start: "-10% 0%",
+            toggleActions: "restart none none reverse",
+            // markers: true
+        }
+        });
+
+        havellsLogoCat.to("#category_about .logo-holder-1", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+        havellsLogoCat.from("#category_about .logo-holder-2", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+
+        var havellsLogoCatDown = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#category_about",
+            start: "0% 0%",
+            end: "100% 0%",
+            scrub: true,
+            // markers: true
+        }
+        });
+
+        havellsLogoCatDown.to("#category_about", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+
+        
+        var bgColorOne = $('#category_meditate').data( "color" );
+        var bgColorTwo = $('#category_halo').data( "color" );
+        var bgColorThree = $('#category_essence').data( "color" );
+
+        console.log(bgColorOne + bgColorTwo + bgColorThree)
+
+        var bgChangeOne = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#category_halo",
+            start: "30% 50%",
+            toggleActions: "restart none none reverse",
+            // markers: true
+        }
+        });
+
+        bgChangeOne.to(".category-products", {backgroundColor: bgColorTwo, duration: 1});
+
+        var bgChangeTwo = gsap.timeline({
+            scrollTrigger:{
+            trigger: "#category_essence",
+            start: "30% 50%",
+            toggleActions: "restart none none reverse",
+            // markers: true
+        }
+        });
+
+        bgChangeTwo.to(".category-products", {backgroundColor: bgColorThree, duration: 1});
+
     }
 }
 </script>

@@ -23,8 +23,8 @@
                         COMPANY
                     </h5>
                     <ul class="footer-menu">
-                        <li><NuxtLink to="/">ABOUT US</NuxtLink></li>
-                        <li><NuxtLink to="/">CONTACT US</NuxtLink></li>
+                        <li><NuxtLink to="/about">ABOUT US</NuxtLink></li>
+                        <li><NuxtLink to="/contact">CONTACT US</NuxtLink></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 menu-col">
@@ -32,8 +32,8 @@
                         LEGAL
                     </h5>
                     <ul class="footer-menu">
-                        <li><NuxtLink to="/">TERMS OF USE</NuxtLink></li>
-                        <li><NuxtLink to="/">PRIVACY POLICY</NuxtLink></li>
+                        <li><NuxtLink to="/terms-of-use">TERMS OF USE</NuxtLink></li>
+                        <li><NuxtLink to="/privacy-policy">PRIVACY POLICY</NuxtLink></li>
                     </ul>
                 </div>
             </div>
