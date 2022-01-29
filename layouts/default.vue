@@ -42,19 +42,24 @@ export default {
             defer: true 
             },
             {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js'
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js',
+            defer: true 
             },
             {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js'
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js',
+            defer: true 
             },
             {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js'
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js',
+            defer: true 
             },
             {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EasePack.min.js'
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EasePack.min.js',
+            defer: true 
             },
             {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/CSSRulePlugin.min.js'
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/CSSRulePlugin.min.js',
+            defer: true 
             }
         ]
         }
