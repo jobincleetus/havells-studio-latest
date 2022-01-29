@@ -5,6 +5,12 @@
         <product-centric-highlights />
         <product-centric-highlights-2 />
         <product-video />
+        <breaking-banner-product /> 
+        <feature-sticky-scroller />
+        <closing-points />
+        <product-cta />
+        <next-product />
+        <youtube-video />
         <img src="~/assets/imgs/meditate-product.png" class="product-mover" alt="product-showcase" />
         <img src="~/assets/imgs/meditate-product.png" class="product-mover-alt" alt="product-showcase" />
         <img src="~/assets/imgs/havells-meditate-open.png" class="product-mover-open" alt="product-showcase" />
@@ -33,6 +39,13 @@
     opacity: 0;
     visibility: hidden;
 }
+@media only screen and (max-width:767px) {
+    .product-mover-alt, .product-mover-open {
+        width: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%) scale(0.8);
+    }
+}
 </style>
 
 <script>
@@ -57,7 +70,7 @@ export default {
             start: "0% 0%",
             end: "55% 50%",
             scrub: 0.5,
-            markers: true,
+            // markers: true,
             pin: true
         }
         });
@@ -78,18 +91,22 @@ export default {
             start: "-20% 0%",
             end: "50% 50%",
             scrub: 0.5,
-            markers: true
+            // markers: true
         }
         });
 
-        productHighlightOne.to(".product-mover",{css: {top: heightlightHeight, x:"400", scale: "0.5", transformOrigin: "50% 100%", duration: 4}});
+        if(window.innerWidth > 768) {
+            productHighlightOne.to(".product-mover",{css: {top: heightlightHeight, x:"400", scale: "0.5", transformOrigin: "50% 100%", duration: 4}});
+        } else {
+            productHighlightOne.to(".product-mover",{css: {top: heightlightHeight-40, xPercent:"30", scale: "0.4", transformOrigin: "50% 100%", duration: 4}});
+        }
         productHighlightOne.to(".product-mover-alt",{autoAlpha: 0, duration: 0});
 
         function productFixedFix() {
             console.log("ended")
         }
 
-        var heightlightHeight = (window.innerHeight + $('#highlight_1').innerHeight() + $('#highlight_1').innerHeight())/1.4 + window.innerHeight*0.2;
+        var heightlightHeight = (window.innerHeight + $('#highlight_1').innerHeight() + $('#highlight_1').innerHeight())/1.4 + window.innerHeight*0.1;
 
         var fixedHeightFix = (window.innerHeight/2 - $('.product-mover').innerHeight()/2)/2;
 
@@ -99,38 +116,64 @@ export default {
                 start: "-30% 10%",
                 end: "50% 50%",
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
-        productHighlightTwo.to(".product-mover",{css: {top: heightlightHeight, x:"0", scale: "0.8", duration: 4}}, "first-center");
+        if(window.innerWidth > 768) {
+            productHighlightTwo.to(".product-mover",{css: {top: heightlightHeight, x:"0", scale: "0.8", duration: 4}}, "first-center");
+        } else {
+            productHighlightTwo.to(".product-mover",{css: {top: heightlightHeight, width: "50%", xPercent:"100", scale: "0.8", duration: 4}}, "first-center");
+        }
         productHighlightTwo.to(".product-mover",{autoAlpha: 0, duration: 0});
-        productHighlightTwo.to(".product-mover-alt",{autoAlpha: 1, duration: 0});
+        productHighlightTwo.fromTo(".product-mover-alt",{autoAlpha: 0, duration: 0.001},{autoAlpha: 1, duration: 0.001});
 
+
+        if(window.innerWidth > 768) {
+            var highlightTwoStart = "30% 50%";
+        } else {
+            var highlightTwoStart = "-10% 50%";
+        }
         var productHighlightThree = gsap.timeline({
             scrollTrigger:{
                 trigger: "#highlight_2",
-                start: "30% 50%",
+                start: highlightTwoStart,
                 end: "50% 50%",
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
-        productHighlightThree.to(".product-mover-alt",{autoAlpha: 0, duration: 1}, "product-open-change");
-        productHighlightThree.to(".product-mover-open",{autoAlpha: 1, duration: 1}, "product-open-change");
+        if(window.innerWidth > 768) {
+            productHighlightThree.to(".product-mover-alt",{autoAlpha: 0, duration: 1}, "product-open-change");
+            productHighlightThree.to(".product-mover-open",{autoAlpha: 1, duration: 1}, "product-open-change");
+        } else {
+            productHighlightThree.to(".product-mover-alt",{xPercent: "-100", autoAlpha: 0, duration: 1}, "product-open-change");
+            productHighlightThree.to(".product-mover-open",{xPercent: "-100", autoAlpha: 1, duration: 1}, "product-open-change");
+        }
 
+
+        if(window.innerWidth > 768) {
+            var highlightFourStart = "45% 50%";
+            var highlightFourEnd = "70% 50%";
+        } else {
+            var highlightFourStart = "-10% 50%";
+            var highlightFourEnd = "30% 50%";
+        }
         var productHighlightFour = gsap.timeline({
             scrollTrigger:{
                 trigger: "#highlight_3",
-                start: "45% 50%",
-                end: "70% 50%",
+                start: highlightFourStart,
+                end: highlightFourEnd,
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
         productHighlightFour.from("#product_highlights_1 .bg-img-holder",{clipPath: "inset(0% 100% 0% 0%)", duration: 1}, "product-open-change");
+        if(window.innerWidth < 768) {
+            productHighlightFour.to(".product-mover-open",{xPercent: "-50", duration: 1}, "product-open-change");
+        }
 
         
         var productHighlightFourAlt = gsap.timeline({
@@ -139,28 +182,55 @@ export default {
                 start: "75% 50%",
                 end: "95% 50%",
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
         productHighlightFourAlt.to("#product_highlights_1 .bg-img-holder",{autoAlpha: 0, duration: 1});
         // productHighlightFourAlt.to(".product-mover-open",{autoAlpha: 0, duration: 1});
+        
 
         
-        
-        var productHighlightFive = gsap.timeline({
+        var productHighlightFourAltClose = gsap.timeline({
             scrollTrigger:{
-                trigger: "#product_highlights_2 .last-row-text",
-                start: "-50% 50%",
-                end: "80% 50%",
+                trigger: "#highlight_3",
+                start: "80% 50%",
+                end: "120% 60%",
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
-        productHighlightFive.to(".row-image",{y: (dispHeight)/2, duration: 1});
-        productHighlightFive.to(".meditate-semi",{x: -300, duration: 1}, "semi-open");
-        productHighlightFive.from(".meditate-semi-part",{autoAlpha: 0, duration: 1}, "semi-open");
+        productHighlightFourAltClose.to(".product-mover-open",{autoAlpha: 0, duration: 1});
+
+        
+        if(window.innerWidth > 768) {
+            var highlightFiveStart = "-50% 50%";
+            var highlightFiveEnd = "80% 50%";
+        } else {
+            var highlightFiveStart = "-100% 100%";
+            var highlightFiveEnd = "-90% 30%";
+        }
+        var productHighlightFive = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#product_highlights_2 .last-row-text",
+                start: highlightFiveStart,
+                end: highlightFiveEnd,
+                scrub: 0.5,
+                // markers: true
+            }
+        });
+
+        if(window.innerWidth > 768) {
+            productHighlightFive.to(".row-image",{y: (dispHeight)/2, duration: 1});
+            productHighlightFive.to(".meditate-semi",{x: -300, duration: 1}, "semi-open");
+            productHighlightFive.from(".meditate-semi-part",{autoAlpha: 0, duration: 1}, "semi-open");
+        } else {
+            // productHighlightFive.to(".row-image",{y: "20", duration: 1});
+            productHighlightFive.to(".meditate-semi",{xPercent: "-25", duration: 1}, "semi-open");
+            productHighlightFive.from(".meditate-semi-part",{autoAlpha: 0, duration: 1}, "semi-open");
+            productHighlightFive.to(".meditate-semi-part",{xPercent: "15", scale: 0.7, duration: 1}, "semi-open");
+        }
         productHighlightFive.to(".product-mover-open",{autoAlpha: 0, duration: 1}, "semi-open");
         
         
@@ -170,11 +240,23 @@ export default {
                 start: "0% 50%",
                 end: "45% 50%",
                 scrub: 0.5,
-                markers: true
+                // markers: true
             }
         });
 
         productHighlightSix.from("#product_video .bg-vid-holder, #product_video .bg-vid-overlay",{clipPath: "inset(10% 20% 10% 20%)", opacity: 0.3, duration: 1});
+        
+        var closingCtaProduct = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#product_cta",
+                start: "10% 50%",
+                end: "60% 50%",
+                scrub: 1,
+                // markers: true
+            }
+        });
+
+        closingCtaProduct.from("#product_cta .bg-img-holder",{scale: 1.3, duration: 2});
     }
 }
 </script>

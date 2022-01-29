@@ -9,6 +9,7 @@
                 <div class="col-sm-4 row-image">
                     <img src="~/assets/imgs/havells-meditate-semi.png" alt="Havells Studio" class="meditate-semi" />
                     <img src="~/assets/imgs/part-hepta.png" alt="Havells Studio" class="meditate-semi-part" />
+                    <img src="~/assets/imgs/part-hepta-2.png" alt="Havells Studio" class="meditate-semi-part" />
                 </div>
                 <div class="col-sm-4 last-row-text">
                     <h2 class="head-level-4 reveal-text">Easy and intuitive maintenance</h2>
@@ -42,6 +43,27 @@
             top: 50%;
             left:50%;
             transform: translate(-50%, -50%);
+
+            &:last-child {
+                z-index: -1;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        #product_highlights_2 {
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+        #product_highlights_2 .last-row-text {
+            margin-top: 30px;
+        }
+        .col-sm-4.row-image  {
+            max-width: 60%;
+            margin: 30px auto 0;
+            img {
+                max-width: 100%;
+            }
         }
     }
 </style>

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row widgets-holder">
                 <div class="col-sm-6">
-                    <img src="~/assets/imgs/havells-logo.svg" alt="Havells Studio" class="footer-logo" />
+                    <NuxtLink to="/"><img src="~/assets/imgs/havells-logo.svg" alt="Havells Studio" class="footer-logo" /></NuxtLink>
                     <p>
                         Havells Studio is a Premium Brand with a unique offering of aesthetically beautiful, modern products backed by futuristic and innovative technology.
                     </p>
@@ -13,9 +13,9 @@
                         PRODUCTS
                     </h5>
                     <ul class="footer-menu">
-                        <li><NuxtLink to="/">MEDITATE</NuxtLink></li>
-                        <li><NuxtLink to="/">HALO</NuxtLink></li>
-                        <li><NuxtLink to="/">ESSENCE</NuxtLink></li>
+                        <li><NuxtLink to="/products/meditate">MEDITATE</NuxtLink></li>
+                        <li><NuxtLink to="/products">HALO</NuxtLink></li>
+                        <li><NuxtLink to="/products">ESSENCE</NuxtLink></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 menu-col">

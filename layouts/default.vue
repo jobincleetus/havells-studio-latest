@@ -66,12 +66,19 @@ export default {
     },
     mounted() {
 
+
+        var navbarAnim = gsap.timeline();
+
+        navbarAnim.from(".navbar-container", 0.5, {autoAlpha:0}, "+=1");
+        
         function init() {
+
+            if($('.page-container').hasClass( "dark-header" )) {
+                $('.navbar-container').addClass( "dark-nav" )
+            } else{
+                $('.navbar-container').removeClass( "dark-nav" )
+            }
             
-            var navbarAnim = gsap.timeline();
-
-            navbarAnim.from(".navbar-container", 0.5, {autoAlpha:0}, "+=1");
-
             let splitWords = function (selector) {
                 var elements = document.querySelectorAll(selector);
 

@@ -47,7 +47,7 @@ export default {
       var banner = gsap.timeline();
 
       banner.from("body", {autoAlpha:0, duration: 1});
-      banner.to("#banner .bg-img-holder", {autoAlpha:0, duration: 2}, "videoshow");
+      banner.to("#banner .bg-img-holder", {autoAlpha:0, duration: 1}, "videoshow");
     //   banner.to("#banner .bg-img-holder", {cssRule: {viu: 'none'}, duration: 0.1});
       banner.from("#banner .bg-vid-holder", {autoAlpha:0, scale: 10, transformOrigin: "80% 20%", duration: 2.5}, "videoshow-=0.3");
     //   banner.from("#banner .container", {autoAlpha:0, y: 100, transformOrigin: "50% 50%", duration: 1}, "videoshow+=1");

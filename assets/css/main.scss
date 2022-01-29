@@ -83,11 +83,27 @@ button {
     bottom: -7px;
 }
 .navbar-container {
+    opacity: 1;
     position: fixed;
     width: 100%;
     z-index: 9;
     transition: 0.5s ease all;
 }
+.play-btn-only {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-image: url('~/assets/imgs/Play.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.45s ease all;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 .canvas-container {
     position: fixed;
     width: 100%;
@@ -269,6 +285,22 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+.btn-black {
+    background-color: $brown-dark;
+    color: $white-base;
+    border-color: $brown-dark;
+}
+.dark-nav .navbar-logo {
+    filter: brightness(1);
+}
+
+.dark-nav.navbar-container .navbar-btn {
+    background: $brown-dark;
+}
+
+.dark-nav .navbar-line, .dark-nav .navbar-line:before, .dark-nav .navbar-line:after {
+    background: $white-base;
+}
 .navbar-container.sticky {
     background-color: $white-base;
 
@@ -338,6 +370,51 @@ section {
 .swiper-pagination-bullet-active {
     background-color: $gold-base;
 }
+.btn-transparent {
+    background-color: transparent;
+    color: #fff;
+}
+form input, form textarea {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 2px;
+    border: 1px solid rgba(51, 43, 41, 0.31);
+    border-radius: 7px;
+}
+form textarea {
+    resize: none;
+}
+form input::placeholder, form textarea::placeholder {
+    color: #000000;
+}
+
+form .btn {
+    font-size: 14px !important;
+    background-color: #332B29;
+    color: #fff;
+}
+#stat-page-banner {
+    background-color: #FDEDB4;
+    padding-top: 130px;
+}
+#stat-page-content {
+    line-height: 1.7;
+    .sub-gold {
+        margin-bottom: 20px;
+    }
+    .text-block:not(:last-child) {
+        margin-bottom: 50px;
+    }
+    .text-block p {
+        margin-bottom: 30px;
+    }
+}
+
+
 
 @media only screen and (max-width: 768px) {
     body {
@@ -474,5 +551,106 @@ section {
         width: 100%;
         max-width: 100%;
         flex: 0 0 100%;
+    }
+
+    // Product Page
+    #sticky_scroller .row {
+        flex-direction: column;
+    }
+    #sticky_scroller {
+        .col-1 {
+            min-height: 300px !important;
+            background-color: #ffedab;
+            max-height: 370px !important;
+            z-index: 10;
+            top: 75px !important;
+        }
+        .col-2 {
+            width: 100% !important;
+            min-width: 100% !important;
+            flex: 0 0 100%;
+        }
+        .col-1 {
+            width: 100% !important;
+            min-width: 100% !important;
+            flex: 0 0 100%;
+            margin: 10px auto;
+        }
+        .reveal-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .section1, .section2, .section3 {
+            height: 70vh !important;
+        }
+        .words {
+            transform: none !important;
+        }
+    }
+    #product_highlight_1 {
+        overflow: hidden;
+        .bg-img-holder {
+            background-position: 40% 90% !important;
+        }
+    }
+    #highlight_1 .col-sm-4 {
+        max-width: 50%;
+    }
+    #highlight_2 .col-sm-4 {
+        max-width: 50%;
+        margin-left: auto;
+    }
+    #product_highlights_1 #highlight_3 {
+        align-items: stretch !important;
+    }
+    #highlight_3 .col-sm-4:last-child {
+        display: flex;
+        align-items: flex-end;
+    }
+    #highlight_3 .col-sm-4:first-child {
+        display: flex;
+        align-items: center;
+    }
+    #closing_highlights .col-sm-6:last-child {
+        margin-top: 40px !important;
+    }
+    #closing_highlights .btn {
+        margin-left: auto !important;
+        margin-top: 15px;
+    }
+    #product_cta .btn:last-child {
+        margin-left: auto !important;
+        margin-top: 15px;
+    }
+    #next_product .col-sm-10 {
+        max-width: 65%;
+    }
+    
+    #next_product .col-sm-10 img {
+        max-width: 100%;
+    }
+    
+    #next_product .col-sm-2 {
+        max-width: 35%;
+    }
+    
+    #next_product .col-sm-2 .play-btn-only {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #next_product .row {
+        align-items: flex-end !important;
+    }
+    #company_overview .col-sm-6 h4 {
+        font-size: 22px !important;
+        margin-top: 30px;
+    }
+    #stat-page-banner h1 .line {
+        justify-content: center !important;
+    }
+    
+    #stat-page-banner .col-sm-6 {
+        text-align: center !important;
     }
 }

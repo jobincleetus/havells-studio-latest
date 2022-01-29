@@ -35,13 +35,17 @@ export default {
             start: "10% 10%",
             end: "55% 50%",
             scrub: true,
-            markers: true,
+            // markers: true,
             pin: true
         }
         });
 
         productBannerText.to("#product_banner h1, #product_banner p", {autoAlpha:0, duration: 0.5, transformOrigin: "50% 0%"}, "first-scroll");
-        productBannerText.to("#product_banner .product-banner-title", {scale:3, duration: 2, transformOrigin: "50% 0%"}, "first-scroll");
+        if(window.innerWidth > 768) {
+            productBannerText.to("#product_banner .product-banner-title", {scale:3, duration: 2, transformOrigin: "50% 0%"}, "first-scroll");
+        } else{
+            productBannerText.to("#product_banner .product-banner-title", {scale:1.2, duration: 2, transformOrigin: "50% 0%"}, "first-scroll");
+        }
     }
 }
 </script>

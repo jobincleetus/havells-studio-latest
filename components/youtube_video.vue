@@ -12,17 +12,25 @@
 </template>
 
 <style lang="scss" scoped>
+    .modal-open .modal {
+        overflow-y: hidden;
+        padding-left: 0 !important;
+    }
     #videoModal.show {
         display: grid !important;
         min-width: 100% !important;
         align-items: center;
     }
     .modal-dialog {
-        max-width: 60%;
+        max-width: 100%;
         width: 100%;
+        margin: 0 auto;
+    }
+    .modal-body {
+        padding: 30px;
     }
     .modal-body iframe {
-        min-height: 80vh;
+        min-height: calc(100vh - 60px);
     }
     .modal-content {
         background-color: #EBE5D5;
@@ -39,8 +47,8 @@
         height: 40px;
         text-align: center;
         position: absolute;
-        top: -20px;
-        right: -20px;
+        top: 10px;
+        right: 10px;
         &:after {
             display: none;
         }
@@ -51,6 +59,20 @@
             transform: translate(-50%, -50%);
             margin-top: -3px;
             margin-left: 1px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .modal-body iframe {
+            min-height: 400px;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+        button.btn-secondary {
+            right: 7px;
+             span {
+                font-size: 20px;
+            }
         }
     }
 </style>

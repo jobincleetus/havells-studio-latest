@@ -10,7 +10,7 @@
             <div class="canvas-container">
             <div class="canvas-container-inner">
                     <nav>
-                        <NuxtLink to="/meditate" class="nav-link">PRODUCTS</NuxtLink>
+                        <NuxtLink to="/products/meditate" class="nav-link">PRODUCTS</NuxtLink>
                         <NuxtLink to="/" class="nav-link">ABOUT US</NuxtLink>
                         <NuxtLink to="/" class="nav-link">CONTACT US</NuxtLink>
                         <NuxtLink to="/" class="nav-link">PRIVACY POLICY</NuxtLink>
