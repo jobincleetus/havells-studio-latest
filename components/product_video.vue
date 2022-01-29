@@ -6,7 +6,7 @@
         </div>
         <a href="#" class="play-btn-only video-btn" data-toggle="modal" data-target="#videoModal" data-src="https://www.youtube.com/embed/cE0wfjsybIQ"></a>
         <video class="bg-vid-holder" autoplay="autoplay" loop muted>
-            <source src="~/assets/vids/Meditate_Page.mp4" type="video/mp4">
+            <source src="~/assets/vids/meditate_page.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="bg-vid-overlay"></div>
