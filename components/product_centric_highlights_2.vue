@@ -72,6 +72,37 @@
 export default {
     name: 'product-centric-highlights-2',
     mounted() {
+        
+        var dispHeight = window.innerHeight;
+
+        if(window.innerWidth > 768) {
+            var highlightFiveStart = "-50% 50%";
+            var highlightFiveEnd = "60% 50%";
+        } else {
+            var highlightFiveStart = "-100% 100%";
+            var highlightFiveEnd = "-90% 30%";
+        }
+        var productHighlightFive = gsap.timeline({
+            scrollTrigger:{
+                trigger: "#product_highlights_2 .last-row-text",
+                start: highlightFiveStart,
+                end: highlightFiveEnd,
+                scrub: 0.5,
+                // markers: true
+            }
+        });
+
+        if(window.innerWidth > 768) {
+            productHighlightFive.to(".row-image",{y: (dispHeight)/2, duration: 1});
+            productHighlightFive.to(".meditate-semi",{x: -300, duration: 1}, "semi-open");
+            productHighlightFive.from(".meditate-semi-part",{autoAlpha: 0, duration: 1}, "semi-open");
+        } else {
+            // productHighlightFive.to(".row-image",{y: "20", duration: 1});
+            productHighlightFive.to(".meditate-semi",{xPercent: "-25", duration: 1}, "semi-open");
+            productHighlightFive.from(".meditate-semi-part",{autoAlpha: 0, duration: 1}, "semi-open");
+            productHighlightFive.to(".meditate-semi-part",{xPercent: "15", scale: 0.7, duration: 1}, "semi-open");
+        }
+        productHighlightFive.to(".product-mover-open",{autoAlpha: 0, duration: 1}, "semi-open");
     }
 }
 </script>

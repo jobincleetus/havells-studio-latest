@@ -18,6 +18,16 @@
         }
 
     }
+    @media only screen and (max-width: 768px) {
+        #about_banner {
+            .bg-img-holder {
+                background-position: 70% 100%;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
 </style>
 
 <script>

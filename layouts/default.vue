@@ -177,22 +177,22 @@ export default {
 
         init();
 
-        if (window.location.href.indexOf("meditate") > -1) {
-            const myTimeout = setTimeout(init, 300);
-            var productHighlightTwoScrubFix = gsap.timeline({
-                scrollTrigger:{
-                    trigger: "#product_highlights_2",
-                    start: "0% 50%",
-                    onEnter: function(){
-                        init();
-                    },
-                    // scrub: 0.5,
-                    markers: true
-                }
-            });
+        // if (window.location.href.indexOf("meditate") > -1) {
+        //     const myTimeout = setTimeout(init, 300);
+        //     var productHighlightTwoScrubFix = gsap.timeline({
+        //         scrollTrigger:{
+        //             trigger: "#product_highlights_2",
+        //             start: "0% 50%",
+        //             onEnter: function(){
+        //                 init();
+        //             },
+        //             // scrub: 0.5,
+        //             markers: true
+        //         }
+        //     });
 
             
-        }
+        // }
 
         let lastUrl = location.href; 
             new MutationObserver(() => {
@@ -206,7 +206,7 @@ export default {
             
         function onUrlChange() {
             console.log('URL changed!', location.href);
-            const myTimeout = setTimeout(init, 300);
+            const myTimeout = setTimeout(init, 100);
         }
         
     },
