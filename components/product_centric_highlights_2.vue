@@ -201,6 +201,18 @@ export default {
                 productHighlightFive.to(".meditate-semi-part",{xPercent: "15", scale: 0.7, duration: 1}, "semi-open");
             }
             // productHighlightFive.to(".product-mover-open",{autoAlpha: 0, duration: 1}, "semi-open");
+
+            var productHighlightFiveTwo = gsap.timeline({
+                scrollTrigger:{
+                    trigger: "#product_highlights_2",
+                    start: "0% 50%",
+                    end: "10% 50%",
+                    scrub: 0.5,
+                    // toggleActions: "play none none reverse",
+                    // markers: true,
+                }
+            });
+            productHighlightFiveTwo.to(".product-mover-open",{autoAlpha: 0, duration: 0.001}, "close-semi");
         }
 
         init();
