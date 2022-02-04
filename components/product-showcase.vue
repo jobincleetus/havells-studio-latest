@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-4">
-                    <img src="~/assets/imgs/meditate-product.png" class="product-showcase-img img-fluid" alt="Product Showcase" />
+                    <img src="~/assets/imgs/meditate-product-2.png" class="product-showcase-img img-fluid" alt="Product Showcase" />
                 </div>
                 <div class="col-sm-1"></div>
                 <div class="col-sm-6">
