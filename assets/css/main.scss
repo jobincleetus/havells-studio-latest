@@ -228,7 +228,7 @@ body {
 }
 .btn {
     background: $white-base;
-    padding: 10px 30px;
+    padding: 7px 20px;
     font-weight: 500;
     border-radius: 30px;
     font-size: 18px;
@@ -279,7 +279,7 @@ body {
     content: '';
     width: 30px;
     height: 30px;
-    margin-right: 10px;
+    margin-right: 13px;
     background-image: url('~/assets/imgs/play.svg');
     background-size: contain;
     background-position: center;
@@ -418,7 +418,7 @@ form .btn {
 
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 16px;
+        font-size: 15px;
     }
     .head-level-1 {
         font-size: 36px;
@@ -427,7 +427,7 @@ form .btn {
         font-size: 18px;
     }
     .btn {
-        font-size: 16px;
+        font-size: 13px;
     }
     .head-level-2 {
         font-size: 30px;
@@ -653,5 +653,26 @@ form .btn {
     
     #stat-page-banner .col-sm-6 {
         text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1600px) {
+    body {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 15px;
+    }
+    .head-level-2 {
+        font-size: 55px;
+    }
+    .navbar-logo {
+        height: 20px;
+    }
+    .navbar-container .container-fluid {
+        padding: 15px 20px;
     }
 }

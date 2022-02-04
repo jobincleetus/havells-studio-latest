@@ -34,7 +34,7 @@
         }
         h1 {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto 40px;
         }
     }
 </style>

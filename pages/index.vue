@@ -9,6 +9,14 @@
   </div>
 </template>
 
+
+<style lang="scss" scoped>
+  .page-container {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
 <script>
 export default {
   name: 'IndexPage',

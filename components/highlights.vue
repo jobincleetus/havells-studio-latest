@@ -55,7 +55,7 @@ export default {
       var homeHighlights = gsap.timeline({
           scrollTrigger:{
 			trigger: "#home-highlights",
-			start: "50% 50%",
+			start: "top 0",
 			scrub: 0.2,
             pin: true,
             end: "+=2000"
@@ -75,6 +75,8 @@ export default {
         homeHighlights.from("#home-highlights .col-sm-4:nth-child(3)", {y:1200, duration: 2}, "second-scroll");
         homeHighlights.to("#home-highlights .bg-img-holder", {scale:1.2, y: 100, duration: 2, transformOrigin: "45% 60%"}, "second-scroll+=1");
       }
+      
+
 
   }
 }

@@ -21,15 +21,16 @@
         <div class="container" id="highlight_3">
             <div class="row">
                 <div class="col-sm-4">
-                    <p class="reveal-text">This process enables in eliminating dust particles, VOC & harmful gases and, bio aerosol & micro-organisms</p>
+                    <p class="">This process enables in eliminating dust particles, VOC & harmful gases and, bio aerosol & micro-organisms</p>
                 </div>
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <h2 class="head-level-4 reveal-text">Breathe clean air. Pure, fast & wide.</h2>
+                    <h2 class="head-level-4">Breathe clean air. Pure, fast & wide.</h2>
                 </div>
             </div>
         </div>
-        <div class="bg-img-holder"></div>
+        <div class="bg-img-holder left-germ"></div>
+        <div class="bg-img-holder right-germ"></div>
     </section>
 </template>
 
@@ -44,11 +45,18 @@
             align-items: center;
         }
         .bg-img-holder {
-            background-image: url('~/assets/imgs/germ-cleaning.jpg');
+            background-image: url('~/assets/imgs/germ-cleaning-1.jpg');
             max-height: 100vh;
+            width: 50%;
             top: auto;
             bottom: 0;
-            transform: translateX(-50%);
+            left: 0;
+            transform: translateX(0%);
+        }
+        .bg-img-holder:last-child {
+            background-image: url('~/assets/imgs/germ-cleaning-2.jpg');
+            left: auto;
+            right: 0;
         }
         #highlight_3 {
             align-items: flex-end;

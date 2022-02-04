@@ -141,7 +141,7 @@ export default {
 
             splitLines(".reveal-text");
 
-            let revealText = document.querySelectorAll(".reveal-text");
+            let revealText = document.querySelectorAll(".reveal-text:not(.reveal-on-scroll)");
 
             gsap.registerPlugin(ScrollTrigger);
             // ScrollTrigger.enable();
@@ -160,7 +160,7 @@ export default {
                     scrollTrigger: {
                         id: "indexPannels" + i,
                         trigger: element,
-                        toggleActions: "restart none none reset"
+                        toggleActions: "play none none none"
                     }
                     });
                     tl.set(element, { autoAlpha: 1 });
@@ -175,7 +175,11 @@ export default {
                     console.log("init started")
         }
 
-        init();
+        
+        $(document).ready(function () {
+            init();
+        })
+        
 
         // if (window.location.href.indexOf("meditate") > -1) {
         //     const myTimeout = setTimeout(init, 300);
