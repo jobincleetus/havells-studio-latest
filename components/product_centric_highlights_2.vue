@@ -180,11 +180,19 @@ export default {
         
             var dispHeight = window.innerHeight;
 
+            if(window.innerWidth > 768) {
+                var productHighlightFiveStart = "-150% 50%";
+                var productHighlightFiveEnd = "50% 50%";
+            } else {
+                var productHighlightFiveStart = "-200% 100%";
+                var productHighlightFiveEnd = "0% 50%";
+            }
+
             var productHighlightFive = gsap.timeline({
             scrollTrigger:{
                 trigger: "#product_highlights_2 .last-row-text",
-                start: "-150% 50%",
-                end: "50% 50%",
+                start: productHighlightFiveStart,
+                end: productHighlightFiveEnd,
                 scrub: 0.5,
                 // markers: true
                 }
@@ -215,8 +223,22 @@ export default {
             productHighlightFiveTwo.to(".product-mover-open",{autoAlpha: 0, duration: 0.001}, "close-semi");
         }
 
-        init();
+        $(document).ready(function() {
+            init();
+        })
 
+        function onUrlChange() {
+            // console.log('URL changed!', location.href);
+            const myTimeout = setTimeout(init, 100);
+        }
+
+    },
+    watch: {
+        "$route": function(){
+            console.log('$route')
+            init();
+            ScrollTrigger.getAll().forEach(ST => ST.kill());
+        }
     }
 }
 </script>

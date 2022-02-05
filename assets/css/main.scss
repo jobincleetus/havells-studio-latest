@@ -125,6 +125,7 @@ button {
 .navbar-container .container-fluid {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 .navbar-logo {
@@ -449,7 +450,7 @@ form .btn {
         justify-content: flex-start;
     }
     #home-tech .bg-img-holder {
-        height: 130vh !important;
+        height: 150vh !important;
         background-position: 35% center;
     }
     #home-highlights .row .col-sm-4:nth-child(2), #home-highlights .row .col-sm-4:nth-child(3) {
@@ -660,7 +661,7 @@ form .btn {
     body {
         font-size: 16px;
     }
-    h4 {
+    h4, .sub-gold {
         font-size: 18px;
     }
     .btn {
@@ -674,5 +675,11 @@ form .btn {
     }
     .navbar-container .container-fluid {
         padding: 15px 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sub-gold {
+        font-size: 16px;
     }
 }

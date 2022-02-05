@@ -37,6 +37,12 @@
             margin: 20px auto 40px;
         }
     }
+
+    @media only screen and (max-width: 768px) {
+        h1 {
+            margin: 10px auto 20px;
+        }
+    }
 </style>
 
 <script>

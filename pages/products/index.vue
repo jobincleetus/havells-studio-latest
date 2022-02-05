@@ -34,17 +34,19 @@ export default {
         havellsLogoCat.to("#category_about .logo-holder-1", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
         havellsLogoCat.from("#category_about .logo-holder-2", {xPercent:"-15", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
 
-        var havellsLogoCatDown = gsap.timeline({
-            scrollTrigger:{
-            trigger: "#category_about",
-            start: "0% 0%",
-            end: "100% 0%",
-            scrub: true,
-            // markers: true
-        }
-        });
+        if(window.innerWidth > 768) {
+            var havellsLogoCatDown = gsap.timeline({
+                scrollTrigger:{
+                trigger: "#category_about",
+                start: "0% 0%",
+                end: "100% 0%",
+                scrub: true,
+                // markers: true
+            }
+            });
 
-        havellsLogoCatDown.to(".comp-container", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+            havellsLogoCatDown.to(".comp-container", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+        }
 
         
         var bgColorOne = $('#category_meditate').data( "color" );

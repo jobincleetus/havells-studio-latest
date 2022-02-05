@@ -32,6 +32,14 @@
         }
         z-index: -1;
     }
+
+    @media only screen and (max-width: 768px) {
+        #home-tech {
+            h2 {
+                max-width: 250px;
+            }
+        }
+    }
 </style>
 
 <script>
@@ -41,14 +49,16 @@ export default {
 
       if(window.innerWidth < 768 ){
         var dispHeight = (window.innerHeight)/4;
+        var hometechStart = "-30% 80%";
       } else {
         var dispHeight = (window.innerHeight)/2;
+        var hometechStart = "-10% 80%";
       }
 
       var homeTech = gsap.timeline({
           scrollTrigger:{
 			trigger: "#home-tech",
-			start: "-10% 80%",
+			start: hometechStart,
 			end: "15% 50%",
 			scrub: 0.2,
             // markers: true
