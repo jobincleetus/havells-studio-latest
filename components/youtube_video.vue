@@ -57,8 +57,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            margin-top: -3px;
+            margin-top: 0px;
             margin-left: 1px;
+            font-family: auto;
         }
     }
     @media only screen and (max-width: 768px) {

@@ -710,3 +710,10 @@ form .btn {
 #category_banner .category-background-grid {
     min-height: 100vh;
 }
+
+.modal-backdrop {
+    z-index: -1;
+}
+.modal-open .navbar-container {
+    z-index: -1;
+}

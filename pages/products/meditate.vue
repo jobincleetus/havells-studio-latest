@@ -196,7 +196,7 @@ export default {
             
             if(window.innerWidth < 768) {
                 productHighlightThreeMob.to(".product-mover-open", {xPercent: "-100", duration: 0.0001});
-                productHighlightThreeMob.to(".product-mover-open", {xPercent: "-50", scale: "1", duration: 0.5});
+                productHighlightThreeMob.to(".product-mover-open", {xPercent: "-50", scale: "0.8", duration: 0.5});
             }
 
             if(window.innerWidth > 768) {

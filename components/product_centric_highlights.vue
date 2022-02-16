@@ -70,6 +70,13 @@
     @media only screen and (max-width: 768px) {
         #product_highlights_1 #highlight_3 {
             min-height: 100vh;
+            text-align: center;
+        }
+        #product_highlights_1 {
+            .bg-img-holder {
+                bottom: 10%;
+                max-height: 60vh;
+            }
         }
     }
     
@@ -94,7 +101,7 @@
     .product-mover-open-alt {
         top: 30%;
         width: 50%;
-        transform: translate(-50%, 0%) scale(1);
+        transform: translate(-50%, 0%) scale(0.8);
     }
 }
 </style>
