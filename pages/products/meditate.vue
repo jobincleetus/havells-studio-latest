@@ -94,7 +94,11 @@ export default {
             } else{
                 productBanner.to("#product_banner .product-banner-title", {scale:1.2, duration: 2, opacity: "0.35", transformOrigin: "50% 0%"}, "first-scroll");
             };
-            productBanner.from("#product_banner .bg-img-holder", {scale:1.5, duration: 2.5, transformOrigin: "50% 0%"}, "first-scroll");
+            if(window.innerWidth > 380) {
+                productBanner.from("#product_banner .bg-img-holder", {scale:1.5, duration: 2.5, transformOrigin: "50% 0%"}, "first-scroll");
+            } else {
+                productBanner.fromTo("#product_banner .bg-img-holder", {scale:1.5, duration: 2.5, transformOrigin: "50% 0%"}, {scale:1.15, duration: 2.5, transformOrigin: "50% 0%"}, "first-scroll");
+            }
             // productBanner.fromTo(".product-mover", {y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, {scale:0.9, y:adjdispHeight, duration: 2, transformOrigin: "50% 100%"}, "first-scroll-=1");
             productBanner.from(".product-mover", {top: "50vh", duration: 2}, "first-scroll");
             productBanner.to(".product-mover", {scale: 0.6, duration: 2}, "first-scroll");
@@ -206,18 +210,18 @@ export default {
                 scrollTrigger:{
                     trigger: "#highlight_3",
                     start: productHighlightThreeStart,
-                    end: productHighlightThreeEnd,
+                    // end: productHighlightThreeEnd,
                     pin: "#product_highlights_1",
                     scrub: 0.5,
                     toggleActions: "play none none reverse",
                     // markers: true,
                 }
             });
-            productHighlightThree.from("#product_highlights_1 .left-germ",{clipPath: "inset(0% 100% 0% 0%)", duration: 0.7});
-            productHighlightThree.from("#highlight_3 .col-sm-4:first-child p",{autoAlpha: 0, y: "50", duration: 0.7}, "-=0.3");
-            productHighlightThree.from("#product_highlights_1 .right-germ",{clipPath: "inset(0% 100% 0% 0%)", duration: 0.7}, "-=0.3");
-            productHighlightThree.from("#highlight_3 .col-sm-4:last-child h2",{autoAlpha: 0, y: "50", duration: 0.7}, "-=0.3");
-            productHighlightThree.to({}, {duration: 3})
+            productHighlightThree.from("#product_highlights_1 .left-germ",{clipPath: "inset(0% 100% 0% 0%)", duration: 1});
+            productHighlightThree.from("#highlight_3 .col-sm-4:first-child p",{autoAlpha: 0, y: "50", duration: 1}, "-=0.5");
+            productHighlightThree.from("#product_highlights_1 .right-germ",{clipPath: "inset(0% 100% 0% 0%)", duration: 1}, "-=0.5");
+            productHighlightThree.from("#highlight_3 .col-sm-4:last-child h2",{autoAlpha: 0, y: "50", duration: 1}, "-=0.5");
+            productHighlightThree.to({}, {duration: 5})
 
 
 
@@ -291,28 +295,29 @@ export default {
 
             var productHighlightFiveTwo = gsap.timeline({
                 scrollTrigger:{
-                    trigger: "#product_highlights_2",
-                    start: "0% 50%",
-                    end: "10% 50%",
-                    scrub: 0.5,
-                    // toggleActions: "play none none reverse",
+                    trigger: "#highlight_3",
+                    start: "50% 50%",
+                    end: "50% 50%",
+                    // scrub: 0.5,
+                    toggleActions: "play none none reverse",
                     // markers: true,
                 }
             });
-            productHighlightFiveTwo.to(".product-mover-open",{autoAlpha: 0, duration: 0.001}, "close-semi");
+            productHighlightFiveTwo.to(".product-mover-open",{autoAlpha:"0", duration: 0.01}, "close-semi");
+            productHighlightFiveTwo.to(".product-mover-open-alt",{autoAlpha:"1", duration: 0.01}, "close-semi");
 
 
             var productHighlightSix = gsap.timeline({
                 scrollTrigger:{
                     trigger: "#product_video",
-                    start: "0% 50%",
-                    end: "45% 50%",
-                    scrub: 0.5,
+                    start: "10% 50%",
+                    toggleActions: "play none none reverse",
+                    // scrub: 1,
                     // markers: true
                 }
             });
 
-            productHighlightSix.from("#product_video .bg-vid-holder, #product_video .bg-vid-overlay",{clipPath: "inset(10% 20% 10% 20%)", opacity: 0.3, duration: 1});
+            productHighlightSix.from("#product_video .bg-vid-holder",{scale: "1.3", duration: 1});
             
             var closingCtaProduct = gsap.timeline({
                 scrollTrigger:{

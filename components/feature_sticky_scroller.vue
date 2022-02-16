@@ -11,19 +11,19 @@
                 </div>
                 <div class="col-2">
                     <section class="section1" id="section1">
-                        <h4 class="text-uppercase sub-gold reveal-text">Active Mode</h4>
-                        <h3 class="head-level-4 reveal-text">Precise monitoring, intuitive display</h3>
-                        <p class="reveal-text">The device displays the AQI using the LED indicator, the display is off to save the battery when not in use.</p>
+                        <h4 class="text-uppercase sub-gold">Active Mode</h4>
+                        <h3 class="head-level-4">Precise monitoring, intuitive display</h3>
+                        <p class="">The device displays the AQI using the LED indicator, the display is off to save the battery when not in use.</p>
                     </section>
                     <section class="section2" id="section2">
-                        <h4 class="text-uppercase sub-gold reveal-text">Sleep Mode</h4>
-                        <h3 class="head-level-4 reveal-text">Purification that's quiet as a whisper</h3>
-                        <p class="reveal-text">It saves your effort and reduces energy use and, also helps you sleep by creating a quieter air flow, without display lighting.</p>
+                        <h4 class="text-uppercase sub-gold">Sleep Mode</h4>
+                        <h3 class="head-level-4">Purification that's quiet as a whisper</h3>
+                        <p class="">It saves your effort and reduces energy use and, also helps you sleep by creating a quieter air flow, without display lighting.</p>
                     </section>
                     <section class="section3" id="section3">
-                        <h4 class="text-uppercase sub-gold reveal-text">Explore Mode</h4>
-                        <h3 class="head-level-4 reveal-text">Check the air purity with just a glance</h3>
-                        <p class="reveal-text">The device can be taken to other areas of the house to check the AQI. This mode displays air quality but doesn’t allow control of the air purifier.</p>
+                        <h4 class="text-uppercase sub-gold">Explore Mode</h4>
+                        <h3 class="head-level-4">Check the air purity with just a glance</h3>
+                        <p class="">The device can be taken to other areas of the house to check the AQI. This mode displays air quality but doesn’t allow control of the air purifier.</p>
                     </section>
                 </div>
             </div>

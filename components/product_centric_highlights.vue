@@ -4,16 +4,16 @@
             <div class="row">
                 <div class="col-sm-8"></div>
                 <div class="col-sm-4">
-                    <h2 class="head-level-4 reveal-text">Removes up to 99.97% of 0.3㎛ sized dust</h2>
-                    <p class="reveal-text">Meditate Air Purifier uses a powerful photo-chemical process developed in-house inspired from NASA technology.</p>
+                    <h2 class="head-level-4">Removes up to 99.97% of 0.3㎛ sized dust</h2>
+                    <p class="">Meditate Air Purifier uses a powerful photo-chemical process developed in-house inspired from NASA technology.</p>
                 </div>
             </div>
         </div>
         <div class="container" id="highlight_2">
             <div class="row">
                 <div class="col-sm-4">
-                    <h2 class="head-level-4 reveal-text">The HEPA filter traps smallest of the things</h2>
-                    <p class="reveal-text">The high grade HEPA and carbon filter enables the process in elminating unwanted things and lets you breathe clean air.</p>
+                    <h2 class="head-level-4">The HEPA filter traps smallest of the things</h2>
+                    <p class="">The high grade HEPA and carbon filter enables the process in elminating unwanted things and lets you breathe clean air.</p>
                 </div>
                 <div class="col-sm-8"></div>
             </div>
@@ -28,6 +28,7 @@
                     <h2 class="head-level-4">Breathe clean air. Pure, fast & wide.</h2>
                 </div>
             </div>
+            <img src="~/assets/imgs/havells-meditate-open.png" class="product-mover-open-alt" alt="product-showcase" />
         </div>
         <div class="bg-img-holder left-germ"></div>
         <div class="bg-img-holder right-germ"></div>
@@ -53,13 +54,14 @@
             left: 0;
             transform: translateX(0%);
         }
-        .bg-img-holder:last-child {
+        .right-germ {
             background-image: url('~/assets/imgs/germ-cleaning-2.jpg');
             left: auto;
             right: 0;
         }
         #highlight_3 {
             align-items: flex-end;
+            position: relative;
         }
         #highlight_2, #highlight_3 {
             min-height: 50vh;
@@ -70,6 +72,31 @@
             min-height: 100vh;
         }
     }
+    
+.product-mover-open-alt {
+    position: absolute;
+    width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+    object-position: center center;
+    top: -86%;
+    // bottom: 10%; 
+    left: 50%;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate(-50%, 0%) scale(0.7);
+    transform-origin: 50% 50%;
+}
+.product-mover-open-alt {
+    opacity: 0;
+}
+@media only screen and (max-width:767px) {
+    .product-mover-open-alt {
+        top: 30%;
+        width: 50%;
+        transform: translate(-50%, 0%) scale(1);
+    }
+}
 </style>
 
 <script>

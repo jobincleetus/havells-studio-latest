@@ -1,16 +1,16 @@
 <template>
-    <section id="closing_highlights" class="grid-section text-center has-reveal-anim">
+    <section id="closing_highlights" class="grid-section text-center">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-sm-6">
                     <img src="~/assets/imgs/wireless-charging.jpg" alt="Wireless Charger" class="br-30" />
-                    <h3 class="head-level-4 reveal-text reveal-center">Long live the wireless charger</h3>
-                    <p class="reveal-text reveal-center">The filter comes with wireless charger which is designed to keep going more than a year on a standard battery you can easily replace.</p>
+                    <h3 class="head-level-4">Long live the wireless charger</h3>
+                    <p class="">The filter comes with wireless charger which is designed to keep going more than a year on a standard battery you can easily replace.</p>
                 </div>
                 <div class="col-sm-6">
                     <img src="~/assets/imgs/mobile-data.jpg" alt="Wireless Charger" class="br-30" />
-                    <h3 class="head-level-4 reveal-text reveal-center">Complete control, at your fingertips</h3>
-                    <p class="reveal-text reveal-center">The Havells app lets you monitor and control your air purifier. So you can understand and adjust the conditions in your home, from wherever you are.</p>
+                    <h3 class="head-level-4">Complete control, at your fingertips</h3>
+                    <p class="">The Havells app lets you monitor and control your air purifier. So you can understand and adjust the conditions in your home, from wherever you are.</p>
                     <a href="#" class="btn"><img src="~/assets/imgs/download-android.png" class="img-fluid" /></a>
                     <a href="#" class="btn"><img src="~/assets/imgs/dowmload-apple.png" class="img-fluid" /></a>
                 </div>

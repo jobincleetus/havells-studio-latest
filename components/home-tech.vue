@@ -76,19 +76,19 @@ export default {
       });
       homeTechText.from("#home-tech .container", {y: 300, transformOrigin: "50% 50%", duration: 1});
 
-      if(window.innerWidth > 768) {
-        var homeTechDown = gsap.timeline({
-            scrollTrigger:{
-            trigger: "#home-tech",
-            start: "0% 0%",
-            end: "100% 0%",
-            scrub: true,
-            // markers: true
-        }
-        });
+    //   if(window.innerWidth > 768) {
+    //     var homeTechDown = gsap.timeline({
+    //         scrollTrigger:{
+    //         trigger: "#home-tech",
+    //         start: "0% 0%",
+    //         end: "100% 0%",
+    //         scrub: true,
+    //         // markers: true
+    //     }
+    //     });
 
-      homeTechDown.to("#home-tech .comp-container", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
-    }
+    //   homeTechDown.to("#home-tech .comp-container", {yPercent:"70", duration: 2, transformOrigin: "50% 50%"}, "first-scroll");
+    // }
   }
 }
 </script>

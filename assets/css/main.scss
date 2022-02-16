@@ -238,6 +238,7 @@ body {
     overflow: hidden;
     border: 1px solid $white-base;
     z-index: 1;
+    text-transform: uppercase;
 
     &:after {
         content: '';
@@ -681,5 +682,27 @@ form .btn {
 @media only screen and (max-width: 768px) {
     .sub-gold {
         font-size: 16px;
+    }
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 380px) {
+    .product_banner {
+        padding: 60px 0 90px;
+    }
+    #sticky_scroller .col-1 {
+        min-height: 280px !important;
+        background-color: #ffedab;
+        // max-height: 280px !important;
+        justify-content: center;
+        padding: 20px 10px 10px;
+        margin-bottom: 0;
+        margin-top: 0;
+
+        img {
+            max-height: 280px !important;
+            margin: 0px auto 0;
+            display: block;
+        }
     }
 }
