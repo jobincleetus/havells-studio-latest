@@ -379,11 +379,11 @@ section {
 form input, form textarea {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size: 14px;
+    margin-bottom: 30px;
+    padding: 14px 20px;
+    font-size: 13px;
     color: #000000;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     border: 1px solid rgba(51, 43, 41, 0.31);
     border-radius: 7px;
 }
@@ -500,7 +500,7 @@ form .btn {
         padding-bottom: 30px;
     }
     .widgets-holder .col-sm-6 {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
     .footer-container .menu-title {
         display: flex;
@@ -537,11 +537,16 @@ form .btn {
         padding-right: 30px !important;
     }
     .copyright-row {
-        margin-top: 30px !important;
+        margin-top: 50px !important;
     }
     .copyright-row .col-sm-6:nth-child(1) {
         order: 2;
         margin-top: 20px;
+    }
+    .social-icons {
+        i {
+            font-size: 25px;
+        }
     }
     .footer-container {
         padding: 60px 0 40px;
@@ -646,7 +651,7 @@ form .btn {
         align-items: flex-end !important;
     }
     #company_overview .col-sm-6 h4 {
-        font-size: 22px !important;
+        font-size: 18px !important;
         margin-top: 30px;
     }
     #stat-page-banner h1 .line {
@@ -716,4 +721,101 @@ form .btn {
 }
 .modal-open .navbar-container {
     z-index: -1;
+}
+
+
+a {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.swiper-button-next, .swiper-button-prev {
+    outline: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+    #about_banner {
+        min-height: 870px;
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #about_banner {
+        background-color: #e1dedb !important;
+        .bg-img-holder {
+            background-image: url('~assets/imgs/about/bg-mobile.jpg') !important;
+        }
+    }
+    #vision_mission {
+        padding-top: 40px;
+        p {
+            font-size: 17px;
+        }
+        .col-sm-3:first-child {
+            margin-bottom: 30px !important;
+        }
+    }
+    #our_values {
+        .col-sm-3 {
+            max-width: 50%;
+            flex: 0 0 50%;
+            margin-bottom: 20px;
+            .value-img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    #contact_details .sub-gold {
+        font-size: 18px !important;
+        letter-spacing: 3px;
+    }
+    #contact_details .contact-pointer {
+        font-size: 17px;
+    }
+    #contact_details .contact-phone:before {
+        width: 16px;
+    }
+    #contact_form {
+        h4, h2, p {
+            text-align: center;
+
+            .line {
+                justify-content: center;
+            }
+        }
+        p {
+            font-size: 18px;
+            color: rgba(51, 43, 41, 0.7);
+        }
+        form input, form textarea {
+            font-size: 15px;
+        }
+    }
+    #product_cta .bg-img-holder {
+        background-image: url('~/assets/imgs/shop-now-mobile.jpg') !important;
+    }
+    section#product_cta {
+        height: fit-content !important;
+        min-height: 550px !important;
+        padding-top: 80px !important;
+    }
+    #category_banner .container h1 {
+        max-width: 350px !important;
+    }
+    #category_about h2 {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    #product_highlight_1 {
+        h2, p {
+            .words {
+                transform: none !important;
+            }
+            .line {
+                opacity: 0;
+                transition: 0.5s ease all;
+            }
+        }
+    }
 }

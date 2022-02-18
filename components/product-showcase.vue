@@ -11,7 +11,7 @@
                     <img src="~/assets/imgs/meditate.svg" class="product-showcase-logo img-fluid" alt="Product Showcase" />
                     <h2 class="head-level-3 reveal-text reveal-center">Air purifers powered by Space Tech</h2>
                     <p class="reveal-text reveal-center">Air Purifier is inspired by consumer need and fortified with SpaceTech Technology that ensures you breathe the purest air.</p>
-                    <a href="#" class="btn mt-4 center-btn">EXPLORE</a>
+                    <NuxtLink to="/products/meditate" class="btn mt-4 center-btn">EXPLORE</NuxtLink>
                 </div>
             </div>
         </div>
@@ -53,6 +53,22 @@
         .product-showcase-logo {
             width: 300px;
             margin: 0 auto 30px;
+        }
+        p {
+            max-width: 400px;
+            margin: 0 auto 10px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        #product-showcase {
+            p {
+                max-width: 80%;
+                margin: 0 auto 10px;
+            }
+            .product-showcase-logo {
+                width: 220px;
+                margin: 0 auto 15px;
+            }
         }
     }
 </style>

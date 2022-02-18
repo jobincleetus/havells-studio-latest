@@ -47,6 +47,22 @@
             object-fit: contain;
             margin-bottom: 20px;
         }
+        .col-sm-3 {
+            h4 {
+                font-size: 25px;
+            }
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        #our_values {
+            .col-sm-3 {
+                p {
+                    max-width: 200px;
+                    font-size: 15px;
+                    margin: 0 auto;
+                }
+            }
+        }
     }
 </style>
 

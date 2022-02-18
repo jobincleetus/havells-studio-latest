@@ -129,6 +129,18 @@ export default {
             });
             productBannerMidSec.to(".product-mover", {top: "calc(50% - 45vh)", x: "0", scale: 0.6, duration: 0.5});
 
+            let progressClosed = false;
+            
+            // var productHighlightText = gsap.timeline({paused: true});
+
+            // productHighlightText.to("#product_highlight_1 h2 .line", {opacity: "1", duration: 1});
+            // productHighlightText.to("#product_highlight_1 p .line", {opacity: "1", duration: 1}, "-=0.3");
+
+            function productHighlightText() {
+                $("#product_highlight_1 h2 .line").css("opacity", "1");
+                $("#product_highlight_1 p .line").css("opacity", "1");
+            }
+
             var productBannerNext = gsap.timeline({
                 scrollTrigger:{
                 trigger: "#product_highlight_1",
@@ -143,7 +155,7 @@ export default {
             if(window.innerWidth > 768) {
                 productBannerNext.to(".product-mover", {top: "30vh", x: "400", scale: 0.3, duration: 2}, "scrolling");
             } else {
-                productBannerNext.to(".product-mover", {top: "35vh", x: "100", scale: 0.3, duration: 2}, "scrolling");
+                productBannerNext.to(".product-mover", {top: "35vh", x: "100", scale: 0.3, duration: 2, onUpdate: function() { console.log(this.progress()); if(this.progress() > 0.35 && progressClosed == false) { productHighlightText(); console.log('text played'); progressClosed = true; } }}, "scrolling");
             }
             productBannerNext.to({}, {duration: 3})
 

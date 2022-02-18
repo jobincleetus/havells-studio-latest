@@ -104,6 +104,7 @@ export default{
         .footer-menu li {
             margin: 10px auto;
             font-size: 14px;
+            letter-spacing: 1px;
             a {
                 color: #332B29;
             }
@@ -112,10 +113,17 @@ export default{
             display: grid;
             grid-template-columns: repeat(5, max-content);
             justify-content: flex-end;
-            grid-gap: 20px;
+            grid-gap: 40px;
         }
         .gold-text {
             font-size: 14px;
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        .footer-container {
+            .social-icons {
+                padding-right: 20px;
+            }
         }
     }
 </style>

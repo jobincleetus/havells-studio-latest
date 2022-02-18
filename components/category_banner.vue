@@ -23,9 +23,14 @@
 <style lang="scss" scoped>
     #category_banner {
         .container {
-            padding: 100px 0;
+            padding: 70px 0;
             position: relative;
             z-index: 1;
+
+            h1 {
+                max-width: 600px;
+                margin: 0 auto;
+            }
 
             &:after {
                 content: '';

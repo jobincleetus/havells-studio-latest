@@ -3,7 +3,7 @@
         <div class="comp-container grid-section">
             <div class="container">
                 <h2 class="head-level-1 text-center reveal-text reveal-center">Exquisitely crafted technology</h2>
-                <a href="#" class="btn text-center mt-4">READ MORE</a>
+                <NuxtLink to="/about" class="btn text-center mt-4">READ MORE</NuxtLink>
             </div>
             <div class="bg-img-holder"></div>
         </div>
@@ -38,6 +38,14 @@
             h2 {
                 max-width: 250px;
             }
+            .bg-img-holder {
+                height: 130vh !important;
+                background-position: 28% center;
+            }
+            .comp-container {
+                justify-content: flex-start;
+                padding-top: 150px;
+            }
         }
     }
 </style>
@@ -49,7 +57,7 @@ export default {
 
       if(window.innerWidth < 768 ){
         var dispHeight = (window.innerHeight)/4;
-        var hometechStart = "-30% 80%";
+        var hometechStart = "-40% 80%";
       } else {
         var dispHeight = (window.innerHeight)/2;
         var hometechStart = "-10% 80%";

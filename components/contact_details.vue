@@ -14,22 +14,22 @@
                     </div>
                     <div class="contact-pointer contact-mail">
                         marketing@havells.com
-                        CIN: L31900DL1983PLC016304
+                        <br>CIN: L31900DL1983PLC016304
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <h4 class="sub-gold reveal-text">REGISTERED OFFICE</h4>
                     <div class="contact-pointer contact-pin">
-                        904, 9th Floor Surya Kiran Building K.G. Marg Connaught Place New Delhi – 110001
+                        904, 9th Floor <br>Surya Kiran Building <br>K.G. Marg <br>Connaught Place <br>New Delhi – 110001
                     </div>
-                    <div class="contact-pointer contact-phone">
+                    <!-- <div class="contact-pointer contact-phone">
                         <a href="tel:+91-120-4771000">+91 - 120 - 4771000</a>
                         <a href="tel:+91-120-4772000">+91 - 120 - 4772000</a>
                     </div>
                     <div class="contact-pointer contact-mail">
                         marketing@havells.com
                         CIN: L31900DL1983PLC016304
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-sm-4">
                     <h4 class="sub-gold reveal-text">FOR CONSUMER COMPLAINT </h4>
@@ -60,12 +60,16 @@
             font-size: 16px;
             margin-bottom: 20px;
         }
+        h2 {
+            margin-bottom: 20px;
+        }
         .contact-pointer {
             position: relative;
             padding-left: 30px;
             padding-right: 30px;
             font-size: 16px;
             color: #332b29c4;
+            line-height: 1.6;
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
@@ -77,27 +81,28 @@
             &:before {
                 content: '';
                 position: absolute;
-                width: 20px;
+                width: 18px;
                 height: 20px;
                 left: 0;
-                top: 1px;
+                top: 3px;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
             }
         }
         .contact-pin:before {
-            background-image: url('~/assets/imgs/pin.png');
+            background-image: url('~/assets/imgs/pin.svg');
         }
         .contact-mail:before {
-            background-image: url('~/assets/imgs/mail.png');
+            background-image: url('~/assets/imgs/mail.svg');
         }
         .contact-web:before {
-            background-image: url('~/assets/imgs/web.png');
+            background-image: url('~/assets/imgs/web.svg');
             height: 25px;
+            top: 1px;
         }
         .contact-phone:before {
-            background-image: url('~/assets/imgs/phone.png');
+            background-image: url('~/assets/imgs/call.svg');
         }
     }
     @media only screen and (max-width: 768px) {
