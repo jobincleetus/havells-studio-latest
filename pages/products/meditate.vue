@@ -155,7 +155,7 @@ export default {
             if(window.innerWidth > 768) {
                 productBannerNext.to(".product-mover", {top: "30vh", x: "400", scale: 0.3, duration: 2}, "scrolling");
             } else {
-                productBannerNext.to(".product-mover", {top: "35vh", x: "100", scale: 0.3, duration: 2, onUpdate: function() { console.log(this.progress()); if(this.progress() > 0.35 && progressClosed == false) { productHighlightText(); console.log('text played'); progressClosed = true; } }}, "scrolling");
+                productBannerNext.to(".product-mover", {top: "35vh", x: "100", scale: 0.3, duration: 2, onUpdate: function() { if(this.progress() > 0.35 && progressClosed == false) { productHighlightText(); console.log('text played'); progressClosed = true; } }}, "scrolling");
             }
             productBannerNext.to({}, {duration: 3})
 

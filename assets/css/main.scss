@@ -819,3 +819,9 @@ a {
         }
     }
 }
+
+@media only screen and (min-width: 1600px) {
+    #product_highlight_1 h2 {
+        max-width: 650px !important;
+    }
+}
